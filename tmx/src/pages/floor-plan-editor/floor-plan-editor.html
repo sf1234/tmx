@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Floor Plan Editor</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-row>
+	 	<ion-col width-25 >
+		   
+		    <ion-list id="floorPlanEditor-list8">
+			      <ion-list-header>
+			       Restaurant Floor Plan
+			       </ion-list-header>
+			      <ion-item class="item-icon-left" id="floorPlanEditor-list-item19">
+			        	<ion-icon name="calculator"></ion-icon> Select Layout
+			       </ion-item>
+			      <ion-item class="item-icon-left" id="floorPlanEditor-list-item20">
+			          <ion-icon name="checkbox"></ion-icon> Objects
+			       </ion-item>
+		    </ion-list>
+		    <div class="spacer" style="width: 1004px; height: 481px;"></div>
+		  
+		  <button padding ion-button color="light" (click) = "save()">Save</button>
+		  <button ion-button color="light" (click) ="dismiss()">Cancel</button> 
+		   
+	    </ion-col>
+     	<ion-col>
+     	</ion-col>
+     </ion-row>	
+</ion-content>

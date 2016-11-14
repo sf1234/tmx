@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Party</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content paddind>
+
+  <ion-row>
+	 	<ion-col width-25 >
+	 		<ion-list padding>
+	   	  <ion-label>Arrival TIme</ion-label>
+		  <ion-item>
+		    <ion-input type="text" placeholder="Time"></ion-input>
+		  </ion-item>
+
+ 			<ion-label> Estimated Wait Time</ion-label>
+		  <ion-item>
+		    <ion-input type="text" placeholder="Time"></ion-input>
+		  </ion-item>
+
+		  <ion-label>Name</ion-label>
+		  <ion-item>
+		    <ion-input type="text" [(ngModel)]="nameModel" placeholder="Name"></ion-input>
+		  </ion-item>
+
+  		   <ion-label>Party Size</ion-label>
+		  <ion-item>
+		    <ion-input type="num" placeholder="Size"></ion-input>
+		  </ion-item>
+
+
+		  <ion-label>Seating Pref  </ion-label>
+		  <ion-item>
+		    <ion-label>Seating pref  </ion-label>
+		    <ion-select  multiple="false" cancelText="Cancel" okText="Select">
+		     <ion-option value="First Available"  checked="true">First Available</ion-option>
+		     <ion-option value="No Seating">No Seating</ion-option>
+		     </ion-select>
+		  </ion-item>
+
+		   <ion-label>Notes</ion-label>
+		  <ion-item>
+		    <ion-input type="text" placeholder="Comments"></ion-input>
+		  </ion-item>
+
+			</ion-list>
+
+	<button padding ion-button color="light" (click) = "save()">Save</button>
+	<button ion-button color="light" (click) ="dismiss()">Cancel</button>
+	 	</ion-col>
+	 	<ion-col ></ion-col>
+</ion-row>
+	</ion-content>
