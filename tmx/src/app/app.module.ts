@@ -10,6 +10,8 @@ import { AnalyticsPage } from '../pages/analytics/analytics';
 import { SettingsPage } from '../pages/settings/settings';
 import { AboutPage } from '../pages/about/about';
 import { AddPartyPage } from '../pages/add-party/add-party';
+import { Storage } from '@ionic/storage';
+import { Data } from '../providers/data';
 
 
 @NgModule({
@@ -42,6 +44,6 @@ import { AddPartyPage } from '../pages/add-party/add-party';
     AboutPage,
     AddPartyPage
   ],
-  providers: []
+  providers: [Storage,  Data]
 })
 export class AppModule {}
