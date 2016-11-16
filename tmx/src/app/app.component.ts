@@ -20,7 +20,7 @@ import { AboutPage } from '../pages/about/about';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
+  // make MainDiningRoomPage the root (or first) page
   rootPage: any = MainDiningRoomPage;
   pages: Array<{title: string, component: any, icon : string}>;
 
@@ -30,15 +30,16 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // // set our app's pages
-    // this.pages = [
-    //   { title: 'Main Dining Room', component: MainDiningRoomPage , icon :'restaurant' },
-    //   { title: 'Floor Plan Editor', component: FloorPlanEditorPage , icon :'create' },
-    //   { title: 'Analytics', component: AnalyticsPage, icon :'keypad' },
-    //   { title: 'Settings', component: SettingsPage , icon :'settings'},
-    //   { title: 'About', component: AboutPage , icon :'help' }
+    // set our app's pages
+    this.pages = [
+      { title: 'Main Dining Room', component: MainDiningRoomPage , icon :'restaurant' },
+      { title: 'List', component: ListPage , icon :'list' },
+      { title: 'Floor Plan Editor', component: FloorPlanEditorPage , icon :'create' },
+      { title: 'Analytics', component: AnalyticsPage, icon :'keypad' },
+      { title: 'Settings', component: SettingsPage , icon :'settings'},
+      { title: 'About', component: AboutPage , icon :'help' }
       
-    // ];
+    ];
   }
 
   initializeApp() {

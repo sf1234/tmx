@@ -26,11 +26,11 @@ export class MainDiningRoomPage {
     ];
   }
   
-  // addParty() {
-	//   console.log('add party');
-	//   this.navCtrl.push(AddPartyPage);
+  addParty() {
+	  console.log('add party');
+	  this.navCtrl.push(AddPartyPage);
 	  
-  // }
+  }
   saveItem(item){
     this.waitList.push(item);
     //this.dataService.save(this.waitList);
