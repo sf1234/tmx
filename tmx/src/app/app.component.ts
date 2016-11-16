@@ -30,15 +30,15 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // set our app's pages
-    this.pages = [
-      { title: 'Main Dining Room', component: MainDiningRoomPage , icon :'restaurant' },
-      { title: 'Floor Plan Editor', component: FloorPlanEditorPage , icon :'create' },
-      { title: 'Analytics', component: AnalyticsPage, icon :'keypad' },
-      { title: 'Settings', component: SettingsPage , icon :'settings'},
-      { title: 'About', component: AboutPage , icon :'help' }
+    // // set our app's pages
+    // this.pages = [
+    //   { title: 'Main Dining Room', component: MainDiningRoomPage , icon :'restaurant' },
+    //   { title: 'Floor Plan Editor', component: FloorPlanEditorPage , icon :'create' },
+    //   { title: 'Analytics', component: AnalyticsPage, icon :'keypad' },
+    //   { title: 'Settings', component: SettingsPage , icon :'settings'},
+    //   { title: 'About', component: AboutPage , icon :'help' }
       
-    ];
+    // ];
   }
 
   initializeApp() {
@@ -53,6 +53,8 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    // this.nav.setRoot(page.component);
+    this.nav.push(page.component);
+    console.log("hello open page function", page.title)
   }
 }

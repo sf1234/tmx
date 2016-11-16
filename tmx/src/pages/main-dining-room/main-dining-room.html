@@ -11,20 +11,16 @@
 <ion-content padding="true" class="has-header ">
   <ion-row>
 	 	<ion-col width-25 >
-		    <a ion-item (click)="addParty()">
-				      Wait List 1
-			<ion-icon  item-right ios="ios-add-circle"  md="md-add-circle"></ion-icon>
+		    <a ion-item >
+				      Wait List
+			<ion-icon  item-right ios="ios-add-circle"  md="md-add-circle" (click)="addParty()"></ion-icon>
 			</a>
 			
 			   <ion-list id="mainDiningRoom-list12">
-		      <ion-item class="item-icon-left item-icon-right" id="mainDiningRoom-list-item18">
-		       <ion-icon name="checkmark-circle"></ion-icon> Name 1
-		        <ion-note item-right>Anniversary Dinner</ion-note>
-		        <ion-icon item-right name="stopwatch"></ion-icon>
-		      </ion-item>
-		      <ion-item class="item-icon-left item-icon-right" id="mainDiningRoom-list-item22">
-		        <ion-icon name="checkmark-circle"></ion-icon> Name 2
-		         <ion-note item-right>Gluten Free</ion-note>
+		      <ion-item class="item-icon-left item-icon-right" 
+					id="mainDiningRoom-list-item22" *ngFor="let item of waitList" >
+		        <ion-icon name="checkmark-circle"></ion-icon> {{item.title}}
+		         <ion-note item-right>{{item.description}}</ion-note>
 		         <ion-icon item-right name="stopwatch"></ion-icon>
 		      </ion-item>
 		    </ion-list>
