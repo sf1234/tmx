@@ -3,68 +3,48 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Main Dinning Room</ion-title>
+    <ion-title ><span #header> {{pageHeader}}  </span>  <ion-icon (click)="presentPopover($event)" name="arrow-dropdown"></ion-icon> </ion-title>
   </ion-navbar>
 </ion-header>
-
-
 <ion-content padding="true" class="has-header ">
   <ion-row>
-	 	<ion-col width-25 >
-		    <a ion-item (click)="addParty()">
-				      Wait List 1
+    <ion-col width-25>
+      <a ion-item (click)="addParty()">
+				      Wait List
 			<ion-icon  item-right ios="ios-add-circle"  md="md-add-circle"></ion-icon>
 			</a>
-			
-			   <ion-list id="mainDiningRoom-list12">
-		      <ion-item class="item-icon-left item-icon-right" id="mainDiningRoom-list-item18">
-		       <ion-icon name="checkmark-circle"></ion-icon> Name 1
-		        <ion-note item-right>Anniversary Dinner</ion-note>
-		        <ion-icon item-right name="stopwatch"></ion-icon>
-		      </ion-item>
-		      <ion-item class="item-icon-left item-icon-right" id="mainDiningRoom-list-item22">
-		        <ion-icon name="checkmark-circle"></ion-icon> Name 2
-		         <ion-note item-right>Gluten Free</ion-note>
-		         <ion-icon item-right name="stopwatch"></ion-icon>
-		      </ion-item>
-		    </ion-list>
-			
-<!-- 		<ion-row> -->
-<!-- 			<ion-col width-10> -->
-<!-- 				 <button  padding ion-button color="light" >Open</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" >Seated</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" >Served</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" >Clean</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" clear>Ordered</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" clear>Ready</button> -->
-<!-- 			</ion-col> -->
-<!-- 			<ion-col> -->
-<!-- 				 <button padding ion-button color="light" clear>Paid</button> -->
-<!-- 			</ion-col> -->
-<!-- 		</ion-row>	 -->
-		 
-			
-			
-	  </ion-col>
-	  <ion-col>
-		   <ion-row>
-			  <ion-col >
-			   </ion-col >
-		  </ion-row>   
-		  <ion-row id="visualArea">
-		  	
-		  </ion-row>
-	  </ion-col>
+      <ion-list id="mainDiningRoom-list12">
+        <ion-item class="item-icon-left item-icon-right" *ngFor="let wlist of waitList">
+          <ion-icon name="checkmark-circle"></ion-icon> {{wlist.name}}
+          <ion-note item-right>{{wlist.notes}}</ion-note>
+          <ion-note item-right>
+            <timer [timeInSeconds]="wlist.waitTime"></timer>
+          </ion-note>
+        </ion-item>
+      </ion-list>
+      <ion-footer style="width:25%">
+        <ion-navbar>
+          <button ion-button>Open 0 /19</button>
+          <button ion-button>Seated 0 /1</button>
+          <button ion-button>Served 0 /19</button>
+          <button ion-button>Clean 0 / 19</button>
+          <button ion-button icon-right>Ready<ion-icon name="fork"></ion-icon></button>
+          <button ion-button icon-right>Paid<ion-icon name="logo-usd"></ion-icon></button>
+          <button ion-button icon-right>Ordered<ion-icon name="heart"></ion-icon></button>
+        </ion-navbar>
+      </ion-footer>
+    </ion-col>
+    <ion-col>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+          <ion-row id="visualArea">
+               <page-floor-one *ngIf="currentFloor == 1" ></page-floor-one>
+               <page-floor-two *ngIf="currentFloor == 2"></page-floor-two>
+      </ion-row>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+    </ion-col>
   </ion-row>
-    </ion-content>
-    
+</ion-content>

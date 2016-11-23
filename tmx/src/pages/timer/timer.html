@@ -1,0 +1,11 @@
+<!-- <ion-card *ngIf="timer">
+<ion-card-header>
+<button *ngIf="timeInSeconds && timeInSeconds > 0" large block clear class="timer-button">{{timer.displayTime}}</button>
+<button *ngIf="!timeInSeconds || timeInSeconds == 0" large block clear class="timer-button">Timer set up incorrectly</button>
+</ion-card-header>
+</ion-card>
+ -->
+
+ <ion-card [ngClass]="{'expired' : expired}" *ngIf="timer">
+{{timer.displayTime}}
+</ion-card>

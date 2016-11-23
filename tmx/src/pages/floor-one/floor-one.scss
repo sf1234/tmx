@@ -1,0 +1,16 @@
+page-floor-one {
+  width: 100%;
+  height: 100%;
+
+  #visualArea{
+    flex: auto;
+  }
+  rect.sus-status {
+   stroke: none;
+  }
+  svg {
+  height: 100%;
+  width: 100%;
+ }
+
+}

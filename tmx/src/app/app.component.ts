@@ -1,11 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
 import { StatusBar } from 'ionic-native';
-
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
 import { MainDiningRoomPage } from '../pages/main-dining-room/main-dining-room';
 import { FloorPlanEditorPage } from '../pages/floor-plan-editor/floor-plan-editor';
 import { AnalyticsPage } from '../pages/analytics/analytics';
@@ -29,7 +24,6 @@ export class MyApp {
     public menu: MenuController
   ) {
     this.initializeApp();
-
     // set our app's pages
     this.pages = [
       { title: 'Main Dining Room', component: MainDiningRoomPage , icon :'restaurant' },
@@ -37,7 +31,7 @@ export class MyApp {
       { title: 'Analytics', component: AnalyticsPage, icon :'keypad' },
       { title: 'Settings', component: SettingsPage , icon :'settings'},
       { title: 'About', component: AboutPage , icon :'help' }
-      
+
     ];
   }
 
